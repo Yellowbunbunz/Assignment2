@@ -17,15 +17,24 @@ public class BlackJack2
     
     public static void main(String[] args) throws IOException 
     {
+        BlackJack2 blackjack2 = new BlackJack2();
+        BlackJackGUI blackjackGUI = new BlackJackGUI(blackjack2);
+        blackjackGUI.playGame();
+
+        // Set up the JFrame
+        blackjackGUI.pack();
+        blackjackGUI.setVisible(true);
+    }
+    
+    public String getPlayerName()
+    {
         String name = "";
         Scanner scanner = new Scanner(System.in);
     
         System.out.println("Player insert your name: ");
         name = scanner.nextLine();
-        
-        Game game = new Game(name);
-        
-        game.Start();
+       
+        return name;
     }
     
 }
