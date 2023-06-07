@@ -191,12 +191,14 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         String name = usernameBox.getText();
-        try {
-            game = new Game(name);
-        } catch (IOException ex) {
-            Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    try {
+        game = new Game(name);
+        userPanel.setVisible(false);
+        gamePanel.setVisible(true);
         playGame(name);
+    } catch (IOException ex) {
+        Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_playButtonActionPerformed
 
     private void usernameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameBoxActionPerformed
@@ -263,7 +265,7 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     public void updatePlayerCards(String cards) {
         // Update the player's cards in the GUI
         // Use the 'cards' parameter to display the player's cards
-        
+        playerHand.setText("Player's Cards:" + game.player.getHand());
     }
     
     public void updatePlayerHandValue(int value) {
@@ -289,10 +291,10 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         dealerHand.setText("Hand Value:" + game.dealer.getHand().getValue());
     }
     
-    public void updateGameStatus(String status) {
+    /*public void updateGameStatus(String status) {
         // Update the game status in the GUI
         // Use the 'status' parameter to display the current game status
-    }
+    }*/
 
     public void endGame() {
         String result;
@@ -334,6 +336,10 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
             Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+       public Hand getPlayerHand() {
+        return playerHand;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -343,7 +349,7 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel logoPanel;
     private javax.swing.JButton playButton;
-    private javax.swing.JLabel playerBalance;
+    public javax.swing.JLabel playerBalance;
     private javax.swing.JLabel playerHand;
     private javax.swing.JButton standButton;
     private javax.swing.JPanel userPanel;
