@@ -13,26 +13,12 @@ import java.util.Scanner;
  */
 public class BlackJack2
 {
-    public static void main(String[] args) throws IOException 
-    {
-        BlackJack2 blackjack2 = new BlackJack2();
-        BlackJackGUI blackjackGUI = new BlackJackGUI(blackjack2);
-        blackjackGUI.playGame();
-
-        // Set up the JFrame
-        blackjackGUI.pack();
-        blackjackGUI.setVisible(true);
+   public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                BlackJackGUI2 blackjackGUI2 = new BlackJackGUI2();
+                blackjackGUI2.setVisible(true);
+            }
+        });
     }
-    
-    public String getPlayerName()
-    {
-        String name = "";
-        Scanner scanner = new Scanner(System.in);
-    
-        System.out.println("Player insert your name: ");
-        name = scanner.nextLine();
-       
-        return name;
-    }
-    
 }

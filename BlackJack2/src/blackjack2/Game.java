@@ -19,6 +19,7 @@ public class Game
     Deck deck;
     private FILEIO fileio;
     private double playerBalance;
+    BlackJackGUI2 gui;
 
    
     //Game Constructor Makes Player, Dealer and Deck.
@@ -29,6 +30,7 @@ public class Game
         dealer = new Dealer("Dealer");
         deck = new Deck();
         playerBalance = fileio.readBalance(name);
+        gui = new BlackJackGUI2();
     }
    
     //Start method
@@ -43,12 +45,12 @@ public class Game
     //Play method.
     public void play()
     {
-        System.out.println("\n" + player.getName() + "'s cards: \n" + player.getHand());
+       System.out.println("\n" + player.getName() + "'s cards: \n" + player.getHand());
         System.out.println("Hand Value: " + player.getHand().getValue());
         System.out.println("Current Balance: " + playerBalance);
 
         System.out.println("\n" + dealer.getName() + "'s cards: \n" + dealer.getHand());
-        System.out.println("Hand Value: " + dealer.getHand().getValue());
+        System.out.println("Hand Value: " + dealer.getHand().getValue()); 
 
         while (player.wantsToHit() == true && player.getHand().getValue() < 21)
         {
