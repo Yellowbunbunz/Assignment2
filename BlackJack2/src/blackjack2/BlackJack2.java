@@ -13,8 +13,6 @@ import java.util.Scanner;
  */
 public class BlackJack2
 {
-
-    
     public static void main(String[] args) throws IOException 
     {
         BlackJack2 blackjack2 = new BlackJack2();
