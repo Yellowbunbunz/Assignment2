@@ -23,14 +23,14 @@ public class Game
 
    
     //Game Constructor Makes Player, Dealer and Deck.
-    Game(String name) throws IOException
+    Game(String name, BlackJackGUI2 gui) throws IOException
     {
         fileio = new FILEIO("balances.txt");
         player = new Player(name, fileio.readBalance(name));
         dealer = new Dealer("Dealer");
         deck = new Deck();
         playerBalance = fileio.readBalance(name);
-        gui = new BlackJackGUI2();
+        this.gui = gui;
     }
    
     //Start method
@@ -45,19 +45,19 @@ public class Game
     //Play method.
     public void play()
     {
-       System.out.println("\n" + player.getName() + "'s cards: \n" + player.getHand());
-        System.out.println("Hand Value: " + player.getHand().getValue());
-        System.out.println("Current Balance: " + playerBalance);
+        gui.updatePlayerCards("\n" + player.getName() + "'s cards: \n" + player.getHand());
+        gui.updateDealerHandValue("Hand Value: " + player.getHand().getValue());
+        gui.updatePlayerBalance("Current Balance: " + playerBalance);
 
-        System.out.println("\n" + dealer.getName() + "'s cards: \n" + dealer.getHand());
-        System.out.println("Hand Value: " + dealer.getHand().getValue()); 
+        gui.updateDealerCards("\n" + dealer.getName() + "'s cards: \n" + dealer.getHand());
+        gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());
 
         while (player.wantsToHit() == true && player.getHand().getValue() < 21)
         {
             System.out.println("You have hit!\n");
             player.getHand().addCard(deck.removeCard());
-            System.out.println("Your Hand: \n" + player.getHand());
-            System.out.println("Hand Value: " + player.getHand().getValue());
+            gui.updatePlayerCards("Your Hand: \n" + player.getHand());
+            gui.updateDealerHandValue("Hand Value: " + player.getHand().getValue());
 
             if (player.getHand().getValue() >= 21)
             {
@@ -73,8 +73,8 @@ public class Game
         {
             System.out.println("Dealer has hit!\n");
             dealer.getHand().addCard(deck.removeCard());
-            System.out.println("Dealer Hand: \n" + dealer.getHand());
-            System.out.println("Hand Value: " + dealer.getHand().getValue());
+            gui.updateDealerCards("Dealer Hand: \n" + dealer.getHand());
+            gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());
 
             if (dealer.getHand().getValue() >= 21)
             {
@@ -88,31 +88,31 @@ public class Game
 
         if (player.getHand().getValue() > 21 && dealer.getHand().getValue() <= 21)
         {
-            System.out.println("Player Busts, Dealer Wins!");
+            gui.updateGameStatus("Player Busts, Dealer Wins!");
             player.updateBalance(-100);
         }
         else if (dealer.getHand().getValue() > 21 && player.getHand().getValue() <= 21)
         {
-            System.out.println("Dealer Busts, Player Wins!");
+            gui.updateGameStatus("Dealer Busts, Player Wins!");
             player.updateBalance(100);
         }
         else if (dealer.getHand().getValue() > player.getHand().getValue())
         {
-            System.out.println("Dealer Wins!");
+           gui.updateGameStatus("Dealer Wins!");
             player.updateBalance(-100);
         }
         else if (player.getHand().getValue() > dealer.getHand().getValue())
         {
-            System.out.println("Player wins!");
+            gui.updateGameStatus("Player wins!");
             player.updateBalance(100);
         }
         else if (player.getHand().getValue() == dealer.getHand().getValue())
         {
-            System.out.println("You tied with the dealer!");
+            gui.updateGameStatus("You tied with the dealer!");
         }
         else if (player.getHand().getValue() > 21 && dealer.getHand().getValue() > 21)
         {
-            System.out.println("All Players Bust No Winner!");
+           gui.updateGameStatus("All Players Bust No Winner!");
         }
 
         // Make sure balance doesn't go below zero

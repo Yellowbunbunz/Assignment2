@@ -13,10 +13,11 @@ import java.util.Scanner;
  */
 public class BlackJack2
 {
-   public static void main(String[] args) {
+   public static void main(String[] args) throws IOException {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 BlackJackGUI2 blackjackGUI2 = new BlackJackGUI2();
+                blackjackGUI2.pack();
                 blackjackGUI2.setVisible(true);
             }
         });

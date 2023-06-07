@@ -52,8 +52,8 @@ public class Player extends Person
 
         while(decision != 'y' && decision != 'Y' && decision != 'n' && decision != 'N')
         {
-              System.out.println("Do you want to hit (y/n)");
-              decision = scanner.next().charAt(0);
+              //System.out.println("Do you want to hit (y/n)");
+             // decision = scanner.next().charAt(0);
         }
        
         if(decision == 'y' || decision == 'Y')
