@@ -45,42 +45,49 @@ public class Game
     //Play method.
     public void play()
     {
-        gui.updatePlayerCards("\n" + player.getName() + "'s cards: \n" + player.getHand());
+        boolean playersTurn = true; 
+        
+        /*gui.updatePlayerCards("\n" + player.getName() + "'s cards: \n" + player.getHand());
         gui.updateDealerHandValue("Hand Value: " + player.getHand().getValue());
         gui.updatePlayerBalance("Current Balance: " + playerBalance);
 
         gui.updateDealerCards("\n" + dealer.getName() + "'s cards: \n" + dealer.getHand());
-        gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());
+        gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());*/
+        
+        gui.showGamePanel();
+        gui.updateUI();
+
 
         while (player.wantsToHit() == true && player.getHand().getValue() < 21)
         {
             System.out.println("You have hit!\n");
             gui.updatePlayerCards("Your Hand: \n" + player.getHand());
-            gui.updateDealerHandValue("Hand Value: " + player.getHand().getValue());
+            gui.updatePlayerHandValue("Hand Value: " + player.getHand().getValue());
 
-            if (player.getHand().getValue() >= 21)
+            if (player.getHand().getValue() >= 21 || player.wantsToStand() == true)
             {
                 player.stand = true;
                 break;
             }
         }
+                     playersTurn = false;
 
         if (player.getHand().getValue() <= 21) {
             System.out.println("Player Stands!");
         }
 
-        while (dealer.wantsToHit() == true)
+        while (dealer.wantsToHit() == true && playersTurn == false)
         {
             System.out.println("Dealer has hit!\n");
             dealer.getHand().addCard(deck.removeCard());
-            gui.updateDealerCards("Dealer Hand: \n" + dealer.getHand());
-            gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());
-
+            /*gui.updateDealerCards("Dealer Hand: \n" + dealer.getHand());
+            gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());*/
             if (dealer.getHand().getValue() >= 21)
             {
                 break;
             }
         }
+                    gui.updateUI();
        
         if (dealer.getHand().getValue() <= 21) {
             System.out.println("Dealer Stands!");

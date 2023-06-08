@@ -195,14 +195,12 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         String name = usernameBox.getText();
-    try {
-        game = new Game(name,this);
-        userPanel.setVisible(false);
-        gamePanel.setVisible(true);
-        playGame(name);
-    } catch (IOException ex) {
-        Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        try {
+            game = new Game(name, this);
+            playGame(name);
+        } catch (IOException ex) {
+            Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_playButtonActionPerformed
 
     private void usernameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameBoxActionPerformed
@@ -211,14 +209,12 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
 
     private void standButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standButtonActionPerformed
             game.player.stand = true;
-        if (game.player.wantsToStand() == true) {
-                updateUI();
-                endGame();
-         }
+            updateUI();
+            endGame();
     }//GEN-LAST:event_standButtonActionPerformed
 
     private void hitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitButtonActionPerformed
-            game.player.hit = true;
+        game.player.hit = true;
         if (game.player.wantsToHit() == true) {
             game.player.getHand().addCard(game.deck.removeCard());
             game.player.hit = false;
@@ -266,59 +262,60 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         dealerHand.setText("Dealer's Cards:" + game.dealer.getHand() + "\n Hand Value:" + game.dealer.getHand().getValue());
         playerBalance.setText("Player Balance:" + game.player.getBalance());
     }
-    
+
     public void updatePlayerCards(String par) {
         // Update the player's cards in the GUI
         // Use the 'cards' parameter to display the player's cards
-        System.out.println(game);
-        playerHand.setText("Player's Cards:" + game.player.getHand());
-        
+        playerHand.setText("Player's Cards:" + par);
+
     }
-    
+
     public void updatePlayerHandValue(String par) {
         // Update the player's hand value in the GUI
         // Use the 'value' parameter to display the hand value
-        playerHand.setText("Players Cards:" + game.player.getHand());
+        playerHand.setText("Players Cards:" + par);
     }
-    
+
     public void updatePlayerBalance(String par) {
         // Update the player's balance in the GUI
         // Use the 'balance' parameter to display the balance
-        playerBalance.setText("Player Balance:" + game.player.getBalance());
+        playerBalance.setText("Player Balance:" + par);
     }
-    
+
     public void updateDealerCards(String par) {
         // Update the dealer's cards in the GUI
-       dealerHand.setText("Dealer's Cards:" + game.dealer.getHand());
+        dealerHand.setText("Dealer's Cards:" + par);
     }
-    
+
     public void updateDealerHandValue(String par) {
         // Update the dealer's hand value in the GUI
         // Use the 'value' parameter to display the hand value
-        dealerHand.setText("Hand Value:" + game.dealer.getHand().getValue());
+        dealerHand.setText("Hand Value:" + par);
     }
-    
+
     public void updateGameStatus(String status) {
         // Update the game status in the GUI
         // Use the 'status' parameter to display the current game status
-        gameStatus.setText("Result of Game: " +status);
+        gameStatus.setText("Result of Game: " + status);
     }
 
     public void endGame() {
-            hitButton.setEnabled(false);
-            standButton.setEnabled(false);
+        hitButton.setEnabled(false);
+        standButton.setEnabled(false);
     }
 
     public void playGame(String name) {
-        System.out.println(game);
         game.Start();
-        updateUI();
-        userPanel.setVisible(false);
-        gamePanel.setVisible(true);
     }
-   
+    
+    public void showGamePanel()
+    {
+        gamePanel.setVisible(true);
+        userPanel.setVisible(false);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel dealerHand;
+    public javax.swing.JLabel dealerHand;
     private javax.swing.JPanel gamePanel;
     public javax.swing.JLabel gameStatus;
     private javax.swing.JButton hitButton;
@@ -326,7 +323,7 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     private javax.swing.JPanel logoPanel;
     private javax.swing.JButton playButton;
     public javax.swing.JLabel playerBalance;
-    private javax.swing.JLabel playerHand;
+    public javax.swing.JLabel playerHand;
     private javax.swing.JButton standButton;
     private javax.swing.JPanel userPanel;
     private javax.swing.JTextField usernameBox;
