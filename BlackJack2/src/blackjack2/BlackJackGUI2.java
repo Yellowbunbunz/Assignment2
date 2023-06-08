@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,6 +15,7 @@ import java.util.logging.Logger;
  *
  * @author Gibbon
  */
+/*
 public class BlackJackGUI2 extends javax.swing.JFrame {
 
     private Game game;
@@ -354,3 +356,4 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField usernameBox;
     // End of variables declaration//GEN-END:variables
 }
+/*
