@@ -47,4 +47,11 @@ public class Hand
         }
         return output;
     }
+     
+     public Card getFirstCard() {
+        if (!hand.isEmpty()) {
+            return hand.get(0);
+        }
+        return null;
+    }
 }

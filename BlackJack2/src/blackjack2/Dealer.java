@@ -24,7 +24,7 @@ public class Dealer extends Person
 
     @Override
     public boolean wantsToStand() {
-        return getHand().getValue() < 17;
+        return getHand().getValue() > 17;
     }
     
     
