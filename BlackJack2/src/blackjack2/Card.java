@@ -43,6 +43,6 @@ public class Card
     @Override
     public String toString()
     {
-        return "[rank: "+rank +" suit: "+suit +"]" +this.getValue();
+        return "[rank: "+rank +" suit: "+suit +"] " +this.getValue();
     }
 }

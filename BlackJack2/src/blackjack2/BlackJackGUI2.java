@@ -33,9 +33,9 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         gamePanel = new javax.swing.JPanel();
         hitButton = new javax.swing.JButton();
         standButton = new javax.swing.JButton();
-        dealerHand = new javax.swing.JLabel();
         playerHand = new javax.swing.JLabel();
         playerBalance = new javax.swing.JLabel();
+        dealerHand = new javax.swing.JLabel();
         gameStatus = new javax.swing.JLabel();
         logoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -63,10 +63,10 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
             .addGroup(userPanelLayout.createSequentialGroup()
                 .addGroup(userPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(userPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(usernameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addComponent(usernameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(userPanelLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
+                        .addGap(75, 75, 75)
                         .addComponent(playButton)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -93,11 +93,12 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
             }
         });
 
-        dealerHand.setText("Dealers Hand:");
-
         playerHand.setText("Players Hand:");
+        playerHand.setMaximumSize(new java.awt.Dimension(300, 300));
 
         playerBalance.setText("Player Balance");
+
+        dealerHand.setText("Dealers Hand:");
 
         gameStatus.setText("Game Result: ");
 
@@ -105,41 +106,35 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         gamePanel.setLayout(gamePanelLayout);
         gamePanelLayout.setHorizontalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(playerHand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(dealerHand, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
             .addGroup(gamePanelLayout.createSequentialGroup()
                 .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dealerHand, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(gamePanelLayout.createSequentialGroup()
-                        .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(gamePanelLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(hitButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(standButton))
-                            .addGroup(gamePanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(playerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(gameStatus))))
-                        .addGap(0, 279, Short.MAX_VALUE))
-                    .addComponent(playerHand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(playerBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gameStatus))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(gamePanelLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(hitButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(standButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         gamePanelLayout.setVerticalGroup(
             gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(playerHand)
+                .addComponent(playerHand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dealerHand)
-                .addGap(48, 48, 48)
-                .addComponent(playerBalance)
                 .addGap(18, 18, 18)
+                .addComponent(playerBalance)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(gameStatus)
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
                 .addGroup(gamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hitButton)
                     .addComponent(standButton))
-                .addContainerGap())
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -150,16 +145,16 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         logoPanelLayout.setHorizontalGroup(
             logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(logoPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         logoPanelLayout.setVerticalGroup(
             logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(logoPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoPanelLayout.createSequentialGroup()
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,25 +162,27 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(248, 248, 248)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(userPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(300, 300, 300)
-                        .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(367, Short.MAX_VALUE))
+                        .addComponent(gamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(422, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(28, 28, 28)
                 .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(67, 67, 67)
                 .addComponent(gamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(152, 152, 152))
         );
@@ -195,16 +192,12 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
 
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         String name = usernameBox.getText();
-    try {
-        game = new Game(name,this);
-        userPanel.setVisible(false);
-        gamePanel.setVisible(true);
-        this.pack();
-        this.setVisible(true);
-        playGame(name);
-    } catch (IOException ex) {
-        Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        try {
+            game = new Game(name, this);
+            playGame(name);
+        } catch (IOException ex) {
+            Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_playButtonActionPerformed
 
     private void usernameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameBoxActionPerformed
@@ -212,19 +205,27 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameBoxActionPerformed
 
     private void standButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standButtonActionPerformed
-        if (game != null) {
-            if (!game.player.wantsToHit()) {
-                updateUI();
-                endGame();
-            }
-        }
+        game.player.stand = true;
+        updateUI();
+        endGame();
     }//GEN-LAST:event_standButtonActionPerformed
 
     private void hitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitButtonActionPerformed
-        if (game != null && game.player.getHand().getValue() < 21) {
+        /*   game.player.hit = true;
+        if (game.player.wantsToHit() == true) {
             game.player.getHand().addCard(game.deck.removeCard());
             updateUI();
+            game.player.hit = false;
             if (game.player.getHand().getValue() >= 21) {
+                endGame();
+            }
+        }*/
+
+        game.player.hit = true;
+        if (game.player.wantsToHit() && game.player.getHand().getValue() < 21) {
+            game.player.getHand().addCard(game.deck.removeCard());
+            updateUI();
+            if (game.player.getHand().getValue() >= 21 || game.player.wantsToStand()) {
                 endGame();
             }
         }
@@ -264,86 +265,81 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
 
     public void updateUI() {
         playerHand.setText("Player's Cards:" + game.player.getHand() + "\n Hand Value:" + game.player.getHand().getValue());
-        dealerHand.setText("Dealer's Cards:" + game.player.getHand() + "\n Hand Value:" + game.dealer.getHand().getValue());
+        dealerHand.setText("Dealer's Cards:" + game.dealer.getHand().getFirstCard() + "\n Hand Value: ?");
         playerBalance.setText("Player Balance:" + game.player.getBalance());
     }
-    
+
     public void updatePlayerCards(String par) {
         // Update the player's cards in the GUI
         // Use the 'cards' parameter to display the player's cards
-        System.out.println(game);
-        playerHand.setText("Player's Cards:" + game.player.getHand());
-        
+        playerHand.setText("Player's Cards:" + par);
+
     }
-    
+
     public void updatePlayerHandValue(String par) {
         // Update the player's hand value in the GUI
         // Use the 'value' parameter to display the hand value
-        playerHand.setText("Players Cards:" + game.player.getHand());
+        playerHand.setText("Players Cards:" + par);
     }
-    
+
     public void updatePlayerBalance(String par) {
         // Update the player's balance in the GUI
         // Use the 'balance' parameter to display the balance
-        playerBalance.setText("Player Balance:" + game.player.getBalance());
+        playerBalance.setText("Player Balance:" + par);
     }
-    
+
     public void updateDealerCards(String par) {
         // Update the dealer's cards in the GUI
-       dealerHand.setText("Dealer's Cards:" + game.dealer.getHand());
+        dealerHand.setText("Dealer's Cards:" + par);
     }
-    
+
     public void updateDealerHandValue(String par) {
         // Update the dealer's hand value in the GUI
         // Use the 'value' parameter to display the hand value
-        dealerHand.setText("Hand Value:" + game.dealer.getHand().getValue());
+        dealerHand.setText("Hand Value:" + par);
     }
-    
+
     public void updateGameStatus(String status) {
         // Update the game status in the GUI
         // Use the 'status' parameter to display the current game status
-        gameStatus.setText("Result of Game: " +status);
+        gameStatus.setText("Result of Game: " + status);
     }
 
     public void endGame() {
-        String result;
+        hitButton.setEnabled(false);
+        standButton.setEnabled(false);
+        dealerHand.setText("Dealers Cards: " + game.dealer.getHand() + " Hand Value: " + game.dealer.getHand().getValue());
 
         if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() <= 21) {
-            result = "Player Busts, Dealer Wins!";
+            gameStatus.setText("Player Busts, Dealer Wins!");
+            game.player.updateBalance(-100);
         } else if (game.dealer.getHand().getValue() > 21 && game.player.getHand().getValue() <= 21) {
-            result = "Dealer Busts, Player Wins!";
-        } else if (game.dealer.getHand().getValue() > game.player.getHand().getValue()) {
-            result = "Dealer Wins!";
-        } else if (game.player.getHand().getValue() > game.dealer.getHand().getValue()) {
-            result = "Player wins!";
+            gameStatus.setText("Dealer Busts, Player Wins!");
+            game.player.updateBalance(100);
+        } else if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() > 21) {
+            gameStatus.setText("All Players Bust No Winner!");
+        } else if (game.dealer.getHand().getValue() > game.player.getHand().getValue() && game.dealer.getHand().getValue() < 21) {
+            gameStatus.setText("Dealer Wins!");
+            game.player.updateBalance(-100);
+        } else if (game.player.getHand().getValue() > game.dealer.getHand().getValue() && game.dealer.getHand().getValue() < 21) {
+            gameStatus.setText("Player wins!");
+            game.player.updateBalance(100);
         } else if (game.player.getHand().getValue() == game.dealer.getHand().getValue()) {
-            result = "You tied with the dealer!";
-        } else {
-            result = "All Players Bust, No Winner!";
-        }
-
-        // jTextArea1.setText(result);
-        if (result.equals("Player Busts, Dealer Wins!")
-                || result.equals("Dealer Busts, Player Wins!")
-                || result.equals("Dealer Wins!")
-                || result.equals("Player wins!")
-                || result.equals("You tied with the dealer!")
-                || result.equals("All Players Bust, No Winner!")) {
-            hitButton.setEnabled(false);
-            standButton.setEnabled(false);
+            gameStatus.setText("You tied with the dealer!");
         }
     }
 
     public void playGame(String name) {
-        System.out.println(game);
         game.Start();
-        updateUI();
+    }
+
+    public void showGamePanel() {
         userPanel.setVisible(false);
         gamePanel.setVisible(true);
     }
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel dealerHand;
+    public javax.swing.JLabel dealerHand;
     private javax.swing.JPanel gamePanel;
     public javax.swing.JLabel gameStatus;
     private javax.swing.JButton hitButton;
@@ -351,7 +347,7 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     private javax.swing.JPanel logoPanel;
     private javax.swing.JButton playButton;
     public javax.swing.JLabel playerBalance;
-    private javax.swing.JLabel playerHand;
+    public javax.swing.JLabel playerHand;
     private javax.swing.JButton standButton;
     private javax.swing.JPanel userPanel;
     private javax.swing.JTextField usernameBox;

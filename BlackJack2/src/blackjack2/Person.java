@@ -30,4 +30,6 @@ public abstract class Person
     }
     
     public abstract boolean wantsToHit();
+    
+    public abstract boolean wantsToStand();
 }

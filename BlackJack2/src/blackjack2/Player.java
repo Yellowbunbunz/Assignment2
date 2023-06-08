@@ -16,6 +16,8 @@ public class Player extends Person
     //Instance Variables
     private Scanner scanner;
     private double balance;
+    public boolean hit;
+    public boolean stand;
    
     //Player Constructor
     public Player(String name, double balance)
@@ -23,6 +25,8 @@ public class Player extends Person
         super(name);  
         this.balance = balance;
         scanner = new Scanner(System.in);
+        hit = false;
+        stand = false;
     }
 
     //Gets the current balance
@@ -48,22 +52,11 @@ public class Player extends Person
     @Override
     public boolean wantsToHit()
     {
-        char decision = '0';  
+        return hit;
+    }
 
-        while(decision != 'y' && decision != 'Y' && decision != 'n' && decision != 'N')
-        {
-              //System.out.println("Do you want to hit (y/n)");
-             // decision = scanner.next().charAt(0);
-        }
-       
-        if(decision == 'y' || decision == 'Y')
-        {
-            return true;
-        }
-       
-        else
-        {
-            return false;
-        }
+    @Override
+    public boolean wantsToStand() {
+       return stand;
     }
 }

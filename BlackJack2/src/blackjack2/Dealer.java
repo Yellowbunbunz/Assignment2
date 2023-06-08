@@ -10,6 +10,7 @@ package blackjack2;
  */
 public class Dealer extends Person
 {   
+    
     public Dealer(String name) 
     {
         super(name);
@@ -19,6 +20,11 @@ public class Dealer extends Person
     public boolean wantsToHit() 
     {
         return getHand().getValue() < 17;
+    }
+
+    @Override
+    public boolean wantsToStand() {
+        return getHand().getValue() > 17;
     }
     
     
