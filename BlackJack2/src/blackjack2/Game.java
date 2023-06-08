@@ -55,12 +55,12 @@ public class Game
         while (player.wantsToHit() == true && player.getHand().getValue() < 21)
         {
             System.out.println("You have hit!\n");
-            player.getHand().addCard(deck.removeCard());
             gui.updatePlayerCards("Your Hand: \n" + player.getHand());
             gui.updateDealerHandValue("Hand Value: " + player.getHand().getValue());
 
             if (player.getHand().getValue() >= 21)
             {
+                player.stand = true;
                 break;
             }
         }
@@ -69,7 +69,7 @@ public class Game
             System.out.println("Player Stands!");
         }
 
-        while (dealer.wantsToHit() == true && dealer.getHand().getValue() < 17)
+        while (dealer.wantsToHit() == true)
         {
             System.out.println("Dealer has hit!\n");
             dealer.getHand().addCard(deck.removeCard());

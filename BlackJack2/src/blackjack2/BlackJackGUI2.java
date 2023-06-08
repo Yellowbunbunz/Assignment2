@@ -199,8 +199,6 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         game = new Game(name,this);
         userPanel.setVisible(false);
         gamePanel.setVisible(true);
-        this.pack();
-        this.setVisible(true);
         playGame(name);
     } catch (IOException ex) {
         Logger.getLogger(BlackJackGUI2.class.getName()).log(Level.SEVERE, null, ex);
@@ -212,17 +210,18 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameBoxActionPerformed
 
     private void standButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standButtonActionPerformed
-        if (game != null) {
-            if (!game.player.wantsToHit()) {
+            game.player.stand = true;
+        if (game.player.wantsToStand() == true) {
                 updateUI();
                 endGame();
-            }
-        }
+         }
     }//GEN-LAST:event_standButtonActionPerformed
 
     private void hitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitButtonActionPerformed
-        if (game != null && game.player.getHand().getValue() < 21) {
+            game.player.hit = true;
+        if (game.player.wantsToHit() == true) {
             game.player.getHand().addCard(game.deck.removeCard());
+            game.player.hit = false;
             updateUI();
             if (game.player.getHand().getValue() >= 21) {
                 endGame();
@@ -264,7 +263,7 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
 
     public void updateUI() {
         playerHand.setText("Player's Cards:" + game.player.getHand() + "\n Hand Value:" + game.player.getHand().getValue());
-        dealerHand.setText("Dealer's Cards:" + game.player.getHand() + "\n Hand Value:" + game.dealer.getHand().getValue());
+        dealerHand.setText("Dealer's Cards:" + game.dealer.getHand() + "\n Hand Value:" + game.dealer.getHand().getValue());
         playerBalance.setText("Player Balance:" + game.player.getBalance());
     }
     
@@ -306,32 +305,8 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     }
 
     public void endGame() {
-        String result;
-
-        if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() <= 21) {
-            result = "Player Busts, Dealer Wins!";
-        } else if (game.dealer.getHand().getValue() > 21 && game.player.getHand().getValue() <= 21) {
-            result = "Dealer Busts, Player Wins!";
-        } else if (game.dealer.getHand().getValue() > game.player.getHand().getValue()) {
-            result = "Dealer Wins!";
-        } else if (game.player.getHand().getValue() > game.dealer.getHand().getValue()) {
-            result = "Player wins!";
-        } else if (game.player.getHand().getValue() == game.dealer.getHand().getValue()) {
-            result = "You tied with the dealer!";
-        } else {
-            result = "All Players Bust, No Winner!";
-        }
-
-        // jTextArea1.setText(result);
-        if (result.equals("Player Busts, Dealer Wins!")
-                || result.equals("Dealer Busts, Player Wins!")
-                || result.equals("Dealer Wins!")
-                || result.equals("Player wins!")
-                || result.equals("You tied with the dealer!")
-                || result.equals("All Players Bust, No Winner!")) {
             hitButton.setEnabled(false);
             standButton.setEnabled(false);
-        }
     }
 
     public void playGame(String name) {
