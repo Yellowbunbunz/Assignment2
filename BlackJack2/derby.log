@@ -1,8 +1,8 @@
-Mon Jun 05 14:01:02 NZST 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Thu Jun 08 13:04:37 NZST 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Jun 05 14:01:02 NZST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0188-8949-4b5e-ffffce93ece8 
-on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJack with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Thu Jun 08 13:04:37 NZST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0188-9888-b9a8-ffffce93ece8 
+on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJackDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/C:/Users/User/Desktop/db-derby-10.14.2.0-bin%20(1)/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_361-b09
@@ -13,19 +13,8 @@ os.version=10.0
 derby.system.home=C:\Users\User\Documents\GitHub\Assignment2\BlackJack2
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Jun 05 14:01:03 NZST 2023:
-Shutting down instance a816c00e-0188-8949-4b5e-ffffce93ece8 on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJack with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-Mon Jun 05 14:01:03 NZST 2023 Thread[DRDAConnThread_3,5,main] (DATABASE = BlackJack), (DRDAID = {2}), Database 'BlackJack' shutdown.
+Thu Jun 08 13:48:08 NZST 2023: Shutting down Derby engine
 ----------------------------------------------------------------
-Mon Jun 05 14:01:36 NZST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 6ede40af-0188-8949-4b5e-ffffce93ece8 
-on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJack with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-Loaded from file:/C:/Users/User/Desktop/db-derby-10.14.2.0-bin%20(1)/db-derby-10.14.2.0-bin/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_361-b09
-user.dir=C:\Users\User\Desktop\db-derby-10.14.2.0-bin (1)\db-derby-10.14.2.0-bin
-os.name=Windows 11
-os.arch=amd64
-os.version=10.0
-derby.system.home=C:\Users\User\Documents\GitHub\Assignment2\BlackJack2
-Database Class Loader started - derby.database.classpath=''
+Thu Jun 08 13:48:08 NZST 2023:
+Shutting down instance a816c00e-0188-9888-b9a8-ffffce93ece8 on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJackDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+----------------------------------------------------------------
