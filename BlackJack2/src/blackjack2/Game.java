@@ -5,6 +5,9 @@
 package blackjack2;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -41,6 +44,8 @@ public class Game {
 
     //Play method.
     public void play() {
+        
+        
         boolean playersTurn = true;
 
         /*gui.updatePlayerCards("\n" + player.getName() + "'s cards: \n" + player.getHand());

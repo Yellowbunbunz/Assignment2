@@ -8,6 +8,8 @@ package blackjack2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -330,8 +332,22 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         }
     }
 
-    public void playGame(String name) {
+    public void playGame(String name) 
+    {
         game.Start();
+        
+        String dbUrl = "jdbc:derby://localhost:1527/BlackJackDB";
+        String username = "BlackJackDB";
+        String password = "BlackJackDB";
+
+        try (Connection connection = DriverManager.getConnection(dbUrl, username, password)) {
+            // Existing connection established
+
+            // Insert player data using the PlayerDataInsertion class
+            Database.insertPlayerData(connection, 1, name, game.player.getBalance());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     //hello
