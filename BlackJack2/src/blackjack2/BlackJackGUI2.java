@@ -15,7 +15,6 @@ import java.util.logging.Logger;
  *
  * @author Gibbon
  */
-/*
 public class BlackJackGUI2 extends javax.swing.JFrame {
 
     private Game game;
@@ -356,4 +355,3 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
     private javax.swing.JTextField usernameBox;
     // End of variables declaration//GEN-END:variables
 }
-/*
