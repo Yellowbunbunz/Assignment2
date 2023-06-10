@@ -16,7 +16,7 @@ public class Database
     
     private static final String userName = "BlackJackDB"; //your DB username
     private static final String password = "BlackJackDB"; //your DB password
-    private static final String URL = "jdbc:derby://localhost:1527/BlackJackDB";  //url of the DB host
+    private static final String URL = "jdbc:derby:BlackJackDB_Edb; create=true";  //url of the DB host
     
     Connection conn;
     private Statement statement;
