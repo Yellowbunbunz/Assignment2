@@ -267,16 +267,21 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         });
     }
 
-    public void updateUI() {
-        playerHand.setText("Player's Cards:" + game.player.getHand() + "\n Hand Value:" + game.player.getHand().getValue());
-        dealerHand.setText("Dealer's Cards:" + game.dealer.getHand().getFirstCard() + "\n Hand Value: ?");
+    public void updateUI() 
+    {
+        String playerCards = game.player.getHand().toString().replace("\n", "<br>").replace(" ", "&nbsp;");
+        playerHand.setText("<html>Player's Cards:<br>" + playerCards + "Hand Value:" + game.player.getHand().getValue());
+        
+        String dealerCards = game.dealer.getHand().getFirstCard().toString().replace("\n", "<br>").replace(" ", "&nbsp;");
+        dealerHand.setText("<html>Dealer's Cards:<br>" + dealerCards + "<br> Hand Value: ?");
         playerBalance.setText("Player Balance:" + game.player.getBalance());
     }
 
     public void updatePlayerCards(String par) {
         // Update the player's cards in the GUI
         // Use the 'cards' parameter to display the player's cards
-        playerHand.setText("Player's Cards:" + par);
+        String cards = par.replace("\n", "<br>");
+        playerHand.setText("<html>Player's Cards:<br>" + cards);
 
     }
 

@@ -40,9 +40,35 @@ public class Card
     }
     
     //Prints a String containing information of the current card
-    @Override
+   @Override
     public String toString()
-    {
-        return "[rank: "+rank +" suit: "+suit +"] " +this.getValue();
+    { 
+        // Switch to print a certain symbol based on the suit
+        String suitStr;
+        switch (suit) {
+            case SPADE:
+                suitStr = "♠";
+                break;
+            case HEART:
+                suitStr = "♥";
+                break;
+            case DIAMOND:
+                suitStr = "♦";
+                break;
+            case CLUB:
+                suitStr = "♣";
+                break;
+            default:
+                suitStr = "";
+    }
+    
+        //Print the ascii art card
+    return "+-------------+\n"
+         +"|" + rank.cardRank + "                 |\n"
+         +"|                   |\n"
+         +"|      "+suitStr+"         |\n"
+         +"|                   |\n"
+         +"|                 " + rank.cardRank + "|\n"
+         +"+-------------+";
     }
 }
