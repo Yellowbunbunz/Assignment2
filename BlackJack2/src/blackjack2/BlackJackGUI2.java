@@ -314,21 +314,36 @@ public class BlackJackGUI2 extends javax.swing.JFrame {
         standButton.setEnabled(false);
         dealerHand.setText("Dealers Cards: " + game.dealer.getHand() + " Hand Value: " + game.dealer.getHand().getValue());
 
-        if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() <= 21) {
+        if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() <= 21) 
+        {
             gameStatus.setText("Player Busts, Dealer Wins!");
             game.player.updateBalance(-100);
-        } else if (game.dealer.getHand().getValue() > 21 && game.player.getHand().getValue() <= 21) {
+            updateUI();
+        } 
+        else if (game.dealer.getHand().getValue() > 21 && game.player.getHand().getValue() <= 21) 
+        {
             gameStatus.setText("Dealer Busts, Player Wins!");
             game.player.updateBalance(100);
-        } else if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() > 21) {
+            updateUI();
+        } 
+        else if (game.player.getHand().getValue() > 21 && game.dealer.getHand().getValue() > 21)
+        {
             gameStatus.setText("All Players Bust No Winner!");
-        } else if (game.dealer.getHand().getValue() > game.player.getHand().getValue() && game.dealer.getHand().getValue() < 21) {
+        }
+        else if (game.dealer.getHand().getValue() > game.player.getHand().getValue() && game.dealer.getHand().getValue() < 21)
+        {
             gameStatus.setText("Dealer Wins!");
             game.player.updateBalance(-100);
-        } else if (game.player.getHand().getValue() > game.dealer.getHand().getValue() && game.dealer.getHand().getValue() < 21) {
+            updateUI();
+        } 
+        else if (game.player.getHand().getValue() > game.dealer.getHand().getValue() && game.dealer.getHand().getValue() < 21)
+        {
             gameStatus.setText("Player wins!");
             game.player.updateBalance(100);
-        } else if (game.player.getHand().getValue() == game.dealer.getHand().getValue()) {
+            updateUI();
+        } 
+        else if (game.player.getHand().getValue() == game.dealer.getHand().getValue()) 
+        {
             gameStatus.setText("You tied with the dealer!");
         }
     }

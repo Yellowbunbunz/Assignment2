@@ -1,7 +1,9 @@
 ----------------------------------------------------------------
-Sat Jun 10 23:24:36 NZST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0188-a50d-0ebc-00000daa09f8 
-on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJackDB_Edb with class loader sun.misc.Launcher$AppClassLoader@29453f44 
+Sun Jun 11 01:58:48 NZST 2023:
+Booting Derby version The Apache Software----------------------------------------------------------------
+Sun Jun 11 01:59:09 NZST 2023: Shutting down Derby engine
+----------------------------------------------------------------
+with class loader sun.misc.Launcher$AppClassLoader@29453f44 
 Loaded from file:/C:/Users/User/Desktop/db-derby-10.14.2.0-bin%20(1)/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_361-b09

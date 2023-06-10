@@ -32,7 +32,8 @@ public class Game {
     private int nextPlayerID = 1;
     
     //Game Constructor Makes Player, Dealer and Deck.
-    Game(String name, BlackJackGUI2 gui) throws IOException {
+    Game(String name, BlackJackGUI2 gui) throws IOException 
+    {
         fileio = new FILEIO("balances.txt");
         player = new Player(name, fileio.readBalance(name));
         dealer = new Dealer("Dealer");
@@ -51,24 +52,20 @@ public class Game {
     public void connectBlackJackDB()
     {
         try {
-            // Establish the connection to the Blackjack database
-            conn.setAutoCommit(false); // Optional: Disable auto-commit for transaction control
+            conn.setAutoCommit(false);
             
-            // Create a statement object to execute SQL queries
             statement = conn.createStatement();
             
-            // Perform any necessary database operations here
             database.createCurrencyTable(statement);
             
-            // If needed, you can commit the changes made to the database
-            // conn.commit();
-            
-            System.out.println("Connected to the Blackjack database.");
+            System.out.println("Connected to the database.");
             
             this.nextPlayerID = database.getLastAssignedPlayerID() + 1;
             
-        } catch (SQLException e) {
-            System.out.println("Failed to connect to the Blackjack database.");
+        } 
+        catch (SQLException e)
+        {
+            System.out.println("Failed to connect to the database.");
             e.printStackTrace();
         }
     }
@@ -80,6 +77,7 @@ public class Game {
         double playerCurrency = player.getBalance();
         
         database.insertPlayerData(playerID, playerName, playerCurrency);
+        database.showTables();
     }
     
     public int generatePlayerID()
