@@ -1,7 +1,7 @@
-Fri Jun 09 13:53:09 NZST 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Sat Jun 10 18:53:47 NZST 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Fri Jun 09 13:53:09 NZST 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0188-9ddb-83e5-ffffce93ece8 
+Sat Jun 10 18:53:48 NZST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0188-a415-1f70-ffffce93ece8 
 on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJackDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 Loaded from file:/C:/Users/User/Desktop/db-derby-10.14.2.0-bin%20(1)/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,9 +12,3 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\User\Documents\GitHub\Assignment2\BlackJack2
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Fri Jun 09 14:24:57 NZST 2023: Shutting down Derby engine
-----------------------------------------------------------------
-Fri Jun 09 14:24:57 NZST 2023:
-Shutting down instance a816c00e-0188-9ddb-83e5-ffffce93ece8 on database directory C:\Users\User\Documents\GitHub\Assignment2\BlackJack2\BlackJackDB with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-----------------------------------------------------------------
