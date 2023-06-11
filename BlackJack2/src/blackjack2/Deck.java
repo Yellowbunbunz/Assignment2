@@ -1,7 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+* Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+*/
 package blackjack2;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class Deck
     // Create an arraylist for the deck
     private ArrayList<Card> deck;
     
-    // Constructor for the deck 
+    // Constructor for the deck
     public Deck()
     {
         deck = new ArrayList<Card>();
@@ -66,5 +66,9 @@ public class Deck
     {
         Collections.shuffle(deck);
         return deck;
+    }
+    
+    public void reset() {
+        deck.clear(); // Assuming 'deck' is an ArrayList<Card>' representing the deck
     }
 }

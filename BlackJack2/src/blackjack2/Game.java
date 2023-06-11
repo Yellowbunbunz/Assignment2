@@ -32,7 +32,7 @@ public class Game {
     private int nextPlayerID = 1;
     
     //Game Constructor Makes Player, Dealer and Deck.
-    Game(String name, BlackJackGUI2 gui) throws IOException 
+    Game(String name, BlackJackGUI2 gui) throws IOException
     {
         fileio = new FILEIO("balances.txt");
         player = new Player(name, fileio.readBalance(name));
@@ -62,7 +62,7 @@ public class Game {
             
             this.nextPlayerID = database.getLastAssignedPlayerID() + 1;
             
-        } 
+        }
         catch (SQLException e)
         {
             System.out.println("Failed to connect to the database.");
@@ -102,12 +102,6 @@ public class Game {
     {
         boolean playersTurn = true;
         
-        /*gui.updatePlayerCards("\n" + player.getName() + "'s cards: \n" + player.getHand());
-        gui.updateDealerHandValue("Hand Value: " + player.getHand().getValue());
-        gui.updatePlayerBalance("Current Balance: " + playerBalance);
-        
-        gui.updateDealerCards("\n" + dealer.getName() + "'s cards: \n" + dealer.getHand());
-        gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());*/
         gui.showGamePanel();
         gui.updateUI();
         
@@ -136,8 +130,6 @@ public class Game {
         while (dealer.wantsToHit() == true && playersTurn == false) {
             System.out.println("Dealer has hit!\n");
             dealer.getHand().addCard(deck.removeCard());
-            /*gui.updateDealerCards("Dealer Hand: \n" + dealer.getHand());
-            gui.updateDealerHandValue("Hand Value: " + dealer.getHand().getValue());*/
             if (dealer.getHand().getValue() >= 21) {
                 break;
             }
@@ -164,5 +156,26 @@ public class Game {
         player.getHand().addCard(deck.removeCard());
         dealer.getHand().addCard(deck.removeCard());
         dealer.getHand().addCard(deck.removeCard());
+    }
+    
+    public void reset() {
+        // Reset player's and dealer's hands
+        player.getHand().resetHand();
+        dealer.getHand().resetHand();
+        
+        // Reset deck
+        deck.reset();
+        
+        // Shuffle the deck
+        deck.shuffleCards();
+        
+        // Update the GUI to reflect the reset state
+        gui.updatePlayerCards("");
+        gui.updatePlayerHandValue("");
+        //gui.updateDealerCards("");
+        gui.updateDealerHandValue("");
+        gui.updateGameStatus("");
+        
+        deal();
     }
 }

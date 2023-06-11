@@ -1,4 +1,6 @@
+fegrthjyu:500.0
 Username:500.0
+Beprfpoght:500.0
 brooklyn:0.0
 TheRandomOne:600.0
 Brooklyn:500.0
@@ -7,3 +9,4 @@ Daniel:500.0
 bjhbju:400.0
 broo:500.0
 Broo:500.0
+defgrthy:500.0

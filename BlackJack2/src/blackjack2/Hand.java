@@ -1,7 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+* Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+*/
 package blackjack2;
 
 import java.util.ArrayList;
@@ -27,16 +27,16 @@ public class Hand
     public int getValue()
     {
         int value = 0;
-
+        
         for(Card card : hand)
         {
             value += card.getValue();
         }
-
+        
         return value;
     }
     
-     public String toString()
+    public String toString()
     {
         String output = "";
         
@@ -47,11 +47,15 @@ public class Hand
         }
         return output;
     }
-     
-     public Card getFirstCard() {
+    
+    public Card getFirstCard() {
         if (!hand.isEmpty()) {
             return hand.get(0);
         }
         return null;
+    }
+    
+    public void resetHand() {
+        hand.clear(); // Assuming 'hand' is an ArrayList<Card>' representing the player's hand
     }
 }
